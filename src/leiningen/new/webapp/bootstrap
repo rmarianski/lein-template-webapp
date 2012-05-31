@@ -1,0 +1,25 @@
+#!/bin/bash
+
+[ -d libraries ] || mkdir libraries
+
+cd libraries
+
+if [ ! -d closure-library ]
+then
+    mkdir closure-library
+    cd closure-library
+    wget http://closure-library.googlecode.com/files/closure-library-20111110-r1376.zip
+    unzip -q closure-library-20111110-r1376.zip
+    rm closure-library-20111110-r1376.zip
+    cd ..
+fi
+
+if [ ! -d clojurescript ]
+then
+    git clone https://github.com/clojure/clojurescript.git clojurescript
+fi
+
+if [ ! -d domina ]
+then
+    git clone https://github.com/levand/domina.git domina
+fi
