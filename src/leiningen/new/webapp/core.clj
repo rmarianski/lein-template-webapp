@@ -1,5 +1,5 @@
 (ns {{name}}.core
-  (:use [ring.adapter.jetty :only (run-jetty)]
+  (:use [ring.adapter.jetty-servlet :only (run-jetty)]
         [{{name}}.routes :only (app)])
   (:import [org.eclipse.jetty.server Server]))
 
@@ -13,6 +13,6 @@
   (stop-server)
   (reset!
    server
-   (run-jetty #'app {:port (or port 8080) :join? false})))
+   (run-jetty #'app {:port (or port 8080)})))
 
 (defn -main [& args] (run-jetty))
