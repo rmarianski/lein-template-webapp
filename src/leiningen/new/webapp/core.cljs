@@ -1,14 +1,12 @@
 (ns {{name}}.core
-  (:use [domina.xpath :only (xpath)])
   (:require [clojure.browser.repl :as repl]
-            [clojure.browser.dom :as dom]
-            [domina :as d]))
+            [clojure.browser.dom :as dom]))
 
 ; (repl/connect "http://localhost:9000/repl")
 
 (defn ^:export say-hello []
   (js/setTimeout
-   #(d/append!
-     (xpath "//body")
+   #(dom/append
+     (.-body js/document)
      (dom/element [:p "Hi from clojurescript!"]))
    1000))

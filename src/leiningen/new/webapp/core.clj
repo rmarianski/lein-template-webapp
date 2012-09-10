@@ -14,5 +14,3 @@
   (reset!
    server
    (run-jetty #'app {:port (or port 8080)})))
-
-(defn -main [& args] (run-jetty))

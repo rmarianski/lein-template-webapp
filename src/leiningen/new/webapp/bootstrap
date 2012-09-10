@@ -18,8 +18,3 @@ if [ ! -d clojurescript ]
 then
     git clone https://github.com/clojure/clojurescript.git clojurescript
 fi
-
-if [ ! -d domina ]
-then
-    git clone https://github.com/levand/domina.git domina
-fi

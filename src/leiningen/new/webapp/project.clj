@@ -1,17 +1,15 @@
 (defproject {{name}} "0.0.1"
   :description "FIXME"
   :dependencies [[org.clojure/clojure "1.4.0"]
-                 [compojure "1.1.0"]
-                 [ring "1.1.0"]
-                 [hiccup "1.0.0"]
+                 [compojure "1.1.3"]
+                 [ring "1.1.5"]
+                 [hiccup "1.0.1"]
                  [rmarianski/ring-jetty-servlet-adapter "0.0.3"]
                  [rmarianski/servlet-session-store "0.0.1"]]
-  :dev-dependencies [[lein-ring "0.6.7"]]
-  :plugins [[lein-cljsbuild "0.1.8"]]
+  :plugins [[lein-cljsbuild "0.2.7"]]
   :source-paths ["src" "src-cljs"
                  "libraries/clojurescript/src/clj"
-                 "libraries/clojurescript/src/cljs"
-                 "libraries/domina/src/cljs"]
+                 "libraries/clojurescript/src/cljs"]
   :cljsbuild
   {:builds [{:source-path "src-cljs"
              :compiler {:output-to "resources/public/js/main.js"
